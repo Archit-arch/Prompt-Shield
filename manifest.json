@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "LLM Input Redactor",
+  "version": "1.0",
+  "description": "Replaces personal info like 'YOUR_NAME(Archit)' with placeholders like 'Name' in LLM input fields.",
+  "permissions": ["storage", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["storage.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+} 
